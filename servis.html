@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firestore Data Example</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <h1>Firestore</h1>
+  <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    const firebaseConfig = {
+      apiKey: "AIzaSyACY3Ne39hjJ8rmNOHdiLXx6WJSCQhXYNc",
+      authDomain: "zakatku-6612.firebaseapp.com",
+      databaseURL: "https://zakatku-6612-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "zakatku-6612",
+      storageBucket: "zakatku-6612.appspot.com",
+      messagingSenderId: "206373246079",
+      appId: "1:206373246079:web:c2ecbabfcdc22eac1b9b4a",
+      measurementId: "G-QGSLLENY0E"
+    };
+  
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    
+    var docRef = db.collection("servis").doc("1");
+
+docRef.get().then((doc) => {
+    if (doc.exists) {
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
+    
+
+    </script>
+  </div>
+</body>
+</html>
